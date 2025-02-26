@@ -5,7 +5,6 @@ import Navigation from './components/Navigation';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Vision from './Pages/Vision';
-import Impact from './components/Impact';
 import Program from './Pages/Program';
 import Backgrounds from './components/Background';
 import ParticlesBackground from './components/ParticleBackground';
