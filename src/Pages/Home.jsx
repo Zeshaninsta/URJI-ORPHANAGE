@@ -14,11 +14,11 @@ import StatCard from '../Pages/Stat-Card'
 import FramerMotion from '../Animation/FramerMotion'
 const Home = () => {
   return (
-    <div className="min-h-screen w-full h-full bg-[#f1f8ff]">
+    <div className="md:min-h-screen w-full bg-[#f1f8ff]">
       <div className="flex  flex-col  items-center justify-center relative "
       >
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.09)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.09)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,black,transparent)]" />
-        <div className="bg-transparent bg-opacity-50 p-4 md:p-8  rounded-lg text-center z-20 md:h-screen w-full flex flex-col justify-start items-center relative">
+        <div className="bg-transparent bg-opacity-50 p-4 md:p-8  rounded-lg text-center z-20  md:h-screen w-full flex flex-col justify-start items-center relative">
           <h1 className=" text-xs md:text-sm font-rubik py-2 px-4 border border-black text-black rounded-full cursor-pointer z-50 flex items-center gap-2 mt-4">
             <GrOrganization />
             Urji Orphanage Organization

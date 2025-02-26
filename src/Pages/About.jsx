@@ -7,7 +7,7 @@ const backgroundSVG = "/Images/oooscillate.svg"
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 overflow-hidden bg-gradient-to-br from-secondary/5 to-primary/5">
+    <section id="about" className="relative py-10 overflow-hidden bg-gradient-to-br from-secondary/5 to-primary/5">
       {/* Decorative elements */}
       <div className="absolute inset-0 z-0 opacity-10">
         <img 
@@ -16,8 +16,6 @@ export default function About() {
           objectFit="cover"
         />
       </div>
-      <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 rounded-full -translate-x-1/2 -translate-y-1/2 filter blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-secondary/10 rounded-full translate-x-1/2 translate-y-1/2 filter blur-3xl"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -50,7 +48,7 @@ export default function About() {
                   objectFit="cover"
                 />
               </div>
-              <CardHeader className="bg-primary/10 p-6 md:mt-10 z-30 relative">
+              <CardHeader className="bg-primary/10 p-6 mt-10 z-30 relative">
                 <CardTitle className="text-2xl font-semibold text-secondary md:text-accent">Keyraddin Mohammed</CardTitle>
                 <p className="text-sm text-secondary md:text-accent">Founder & Director</p>
               </CardHeader>

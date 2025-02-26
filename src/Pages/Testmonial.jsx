@@ -24,7 +24,7 @@ const testimonials = [
 
 export default function Testimonial() {
   return (
-    <section id="testimonial" className="py-16 bg-white">
+    <section id="testimonial" className="py-10 bg-white">
       <div className="container mx-auto px-4">
       <FramerMotion>
       <h2 className="text-4xl  font-bold mb-12 text-secondary text-center">Testimonials</h2>

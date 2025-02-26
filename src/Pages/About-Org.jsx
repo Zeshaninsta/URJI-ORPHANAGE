@@ -6,7 +6,7 @@ import Image3 from '/public/Images/BG.jpg'
 import FramerMotion from '../Animation/FramerMotion'
 export default function AboutOrg() {
   return (
-    <section id="about" className="py-4 md:py-10 bg-white">
+    <section id="about" className="py-10 bg-white">
       <div className="container max-w-7xl mx-auto px-4">
       <FramerMotion>
         <h2 className="text-4xl font-bold text-center mb-12 text-secondary">About Us</h2>
