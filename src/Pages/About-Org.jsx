@@ -28,9 +28,7 @@ export default function AboutOrg() {
             </FramerMotion>
             <FramerMotion>
             <p className="text-sm md:text-md border border-border p-3 rounded-md text-muted-foreground text-center md:text-start">
-              Founded in 1995, Urji Orphanage Organization has grown from a small local initiative to an international organization,
-              touching the lives of thousands of children across multiple countries. Our commitment to excellence and
-              child-centered care has made us a leader in orphan care and support.
+            Established in 2012 EC, Urji Orphanage Organization supports 25 children, providing food, clothing, education, and financial aid. Our mission is to empower orphaned children and struggling families in Bale Robe, aiming for self-sufficiency by 2025. With local and international support, we strive to expand our impact nationwide, ensuring a brighter future for those in need
             </p>
             </FramerMotion>
             <FramerMotion>
@@ -38,10 +36,10 @@ export default function AboutOrg() {
             </FramerMotion>
             <FramerMotion>
             <ul className="text-sm md:text-md border border-border p-3 rounded-md list-disc list-inside text-muted-foreground space-y-2 ">
-              <li>Over 5,000 children supported</li>
-              <li>100% high school graduation rate</li>
-              <li>80% of our children pursue higher education</li>
-              <li>Presence in 10 countries worldwide</li>
+              <li>25+ children currently supported</li>
+              <li>Providing food, education, and financial aid</li>
+              <li>Goal: Self-sufficiency for children and families by 2025</li>
+              <li>Expanding impact beyond Bale Robe with community support</li>
             </ul>
             </FramerMotion>
             <FramerMotion>

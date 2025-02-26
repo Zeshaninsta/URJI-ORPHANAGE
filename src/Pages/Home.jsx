@@ -2,7 +2,6 @@ import React from "react";
 import heroImage from "../assets/Images/1.jpg"; // Adjust the path as needed
 import banner from "../assets/Images/nav.jpg";
 import Button from "../components/Button";
-import SSVG from "../assets/Images/oooscillate.svg";
 import { GrOrganization } from "react-icons/gr";
 import { FaHandsHelping } from "react-icons/fa";
 import { GiHotMeal } from "react-icons/gi";

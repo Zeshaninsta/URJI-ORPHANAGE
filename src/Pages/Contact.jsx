@@ -86,7 +86,7 @@ export default function Contact() {
               <Card className="border-primary/20 overflow-hidden">
                 <CardContent className="p-0">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2412648718453!2d-73.98784892439711!3d40.75790083441668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1710697186343!5m2!1sen!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.7632130714477!2d40.00349482292594!3d7.119873853244106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17ca01dae5f40161%3A0xc7dfe0d9e1507788!2sAwash%20International%20Bank%20Robe%20Branch%20Bldg%20Construction%20Site!5e0!3m2!1sen!2set!4v1740571759854!5m2!1sen!2set"
                     width="100%"
                     height="370"
                     style={{ border: 0 }}

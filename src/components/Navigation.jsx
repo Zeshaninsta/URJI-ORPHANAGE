@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import { IoMdStarOutline } from "react-icons/io";
 import Logo from '../assets/Images/logo.png'
 import useScrollPosition from '../Hooks/useScrollPosition';
@@ -7,14 +7,29 @@ import { MdClose } from "react-icons/md";
 import FramerMotion from '../Animation/FramerMotion';
 
 const Navigation = () => {
-  const scrollPosition = useScrollPosition();
   const [isMobile, setisMobile] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const toggleMobile = () => {
     setisMobile(!isMobile);
   }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <div
-      className="w-full max-w-8xl mx-auto flex flex-col bg-transparent  backdrop-blur-md justify-center items-center z-50 px-5 transition-all duration-300 sticky top-0 py-2">
+    <nav
+    className={`sticky top-0 py-4 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" : "bg-[#f1f8ff]"}`}
+  >
             <div className='hidden md:flex w-full max-w-8xl mx-auto  justify-between items-center px-10'>
                 <div className='relative flex justify-between items-center '>
                 <img src={Logo} alt="logo" className='w-14 rounded-full' />
@@ -97,7 +112,7 @@ const Navigation = () => {
                     </div>
               </div>
             )}
-    </div>
+    </nav>
   )
 }
 

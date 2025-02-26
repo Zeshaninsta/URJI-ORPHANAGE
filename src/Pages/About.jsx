@@ -1,83 +1,131 @@
-import React from 'react';
-import Keyruu from '../assets/Images/Keyruu.jpg'; // Ensure the path is correct
-import SSVG from '../assets/Images/oooscillate.svg';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { motion } from "framer-motion"
+import { Quote, Heart, Users, GraduationCap, Home, Globe } from 'lucide-react'
 
-const About = () => {
+const directorImage = "/Images/Keyruu.jpg"
+const backgroundSVG = "/Images/oooscillate.svg"
+
+export default function About() {
   return (
-    <div className='relative min-h-screen py-20 bg-gray-900 text-white'>
-      {/* Decorative Background */}
-      <div className='absolute inset-0 z-0'>
+    <section id="about" className="relative py-24 overflow-hidden bg-gradient-to-br from-secondary/5 to-primary/5">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 z-0 opacity-10">
         <img 
-          src={SSVG} 
-          alt="Decorative Background" 
-          className='object-cover w-full h-full opacity-20'
+          src={backgroundSVG || "/placeholder.svg"}
+          alt="Decorative Background"
+          objectFit="cover"
         />
       </div>
+      <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 rounded-full -translate-x-1/2 -translate-y-1/2 filter blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-secondary/10 rounded-full translate-x-1/2 translate-y-1/2 filter blur-3xl"></div>
 
-      {/* Main Content */}
-      <div className='relative z-10'>
-        {/* Header Section */}
-        <section className='text-center mb-20'>
-          <h1 className='text-4xl lg:text-5xl font-bold mb-6 font-inter'>
-            About Our Organization
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-4xl  font-bold mb-4 text-secondary">
+            A Message from Our Founder
           </h1>
-          <p className='text-lg lg:text-xl font-inter font-light'>
-            Discover our mission and meet the visionary behind our efforts.
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            Discover the heart behind our mission and the vision that drives our commitment to transforming lives.
           </p>
-        </section>
+        </motion.div>
 
-        {/* Director’s Section */}
-        <section className='max-w-4xl mx-auto'>
-          {/* Profile Card */}
-          <div className='bg-gray-800 rounded-lg shadow-lg overflow-hidden'>
-            {/* Profile Header */}
-            <div className='flex items-center p-6 bg-gray-700'>
-              <div className='relative w-20 h-20'>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
+          {/* Director Image and Info */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-5"
+          >
+            <Card className="border-primary/20 overflow-hidden bg-white/50 backdrop-blur-sm">
+              <div className="relative h-80 w-full">
                 <img
-                  src={Keyruu}
-                  alt='Keyraddin Mohammed'
-                  className='object-cover w-full h-full rounded-full border-2 border-gray-600 shadow-md'
+                  src={directorImage || "/placeholder.svg"}
+                  alt="Keyraddin Mohammed"
+                  objectFit="cover"
                 />
               </div>
-              <div className='ml-4'>
-                <h3 className='text-xl font-semibold font-inter'>
-                  Keyraddin Mohammed 
-                </h3>
-                <p className='text-sm font-inter font-light'>Founder & Director</p>
-              </div>
-            </div>
+              <CardHeader className="bg-primary/10 p-6 md:mt-10 z-30 relative">
+                <CardTitle className="text-2xl font-semibold text-secondary md:text-accent">Keyraddin Mohammed</CardTitle>
+                <p className="text-sm text-secondary md:text-accent">Founder & Director</p>
+              </CardHeader>
+              <CardContent className="p-6 ">
+                <p className="text-sm text-muted-foreground italic">
+                  "Our journey began with a simple yet powerful vision: to create a world where every child has the opportunity to thrive, regardless of their circumstances."
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
 
-            {/* Post Content */}
-            <div className='p-6'>
-              <div className='space-y-4'>
-                <p className='text-base leading-relaxed font-inter'>
-                  The Urji Orphanage Organization was established in 2012 EC (Ethiopian Calendar) and has been working on various activities according to its mission and plans.
+          {/* Organization Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="lg:col-span-7"
+          >
+            <Card className="border-primary/20 h-full bg-white/50 backdrop-blur-sm">
+              <CardHeader className="bg-primary/10 p-6">
+                <CardTitle className="text-2xl font-semibold text-secondary flex items-center gap-2">
+                  <Quote className="w-6 h-6 text-primary" />
+                  Our Story & Impact
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6 space-y-6">
+                <p className="text-muted-foreground leading-relaxed">
+                  The Urji Orphanage Organization was born from a deep-seated desire to make a lasting difference in the lives of vulnerable children. Since our establishment in 2012 (Ethiopian Calendar), we've been on an unwavering mission to provide hope, care, and opportunities to those who need it most.
                 </p>
-                <p className='text-base leading-relaxed font-inter font-light'>
-                  We currently support 25 children, including 12 boys and 13 girls, who were previously in difficult situations. We have significantly improved their living conditions.
-                </p>
-                <p className='text-base leading-relaxed font-inter font-light'>
-                  Our support includes food, clothing, educational materials, and a monthly allowance of 1000 Ethiopian Birr, along with additional assistance.
-                </p>
-                <p className='text-base leading-relaxed font-inter font-light'>
-                  Our goal is to help children and families in the Bale Robe area achieve self-sufficiency and positive development by 2025, providing necessary skills and resources.
-                </p>
-                <p className='text-base leading-relaxed font-inter font-light'>
-                  We aim to address the needs of orphaned children and those in challenging situations by ensuring they receive adequate education and support.
-                </p>
-                <p className='text-base leading-relaxed font-inter font-light'>
-                  Community support, both local and international, is crucial for achieving our goals. Contributions, whether financial or in-kind, are highly valued to continue our mission effectively.
-                </p>
-                <p className='text-base leading-relaxed font-inter font-light'>
-                  Our impact extends beyond Robe, aiming to make a difference nationwide. Support in any form strengthens our efforts and mission.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    { icon: Heart, title: "Children Supported", content: "25 children (12 boys, 13 girls) with improved living conditions" },
+                    { icon: Users, title: "Holistic Care", content: "Food, clothing, education, and 1000 ETB monthly allowance" },
+                    { icon: GraduationCap, title: "Education Focus", content: "Ensuring quality education and skill development for every child" },
+                    { icon: Home, title: "Community Impact", content: "Transforming lives in Bale Robe and beyond" },
+                    { icon: Globe, title: "Vision 2025", content: "Aiming for self-sufficiency and positive development" }
+                  ].map((item, index) => (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="flex items-start bg-primary/5 p-4 rounded-lg"
+                    >
+                      <item.icon className="w-8 h-8 text-primary mr-3 flex-shrink-0" />
+                      <div>
+                        <h3 className="font-semibold text-secondary mb-1">{item.title}</h3>
+                        <p className="text-sm text-muted-foreground">{item.content}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-4 md:mt-12 text-center"
+        >
+          <p className="text-sm md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
+            Our journey is far from over, and we invite you to be a part of this transformative mission. Your support, whether through donations, volunteering, or spreading awareness, can help us write more success stories and bring smiles to countless faces.
+          </p>
+          <a 
+            href="#support" 
+            className="inline-block bg-primary text-white px-8 py-4 rounded-md font-semibold text-lg hover:bg-primary/90 transition-all hover:shadow-lg transform hover:-translate-y-1"
+          >
+            Join Our Mission
+          </a>
+        </motion.div>
       </div>
-    </div>
-  );
-};
-
-export default About;
+    </section>
+  )
+}

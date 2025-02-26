@@ -1,69 +1,103 @@
-import React from 'react';
+import { Link } from "react-router-dom";
+import { 
+  Building, Phone, Mail, MapPin, 
+  Facebook, Twitter, Linkedin, Instagram 
+} from "lucide-react";
+import { Button } from "../components/ui/button";
 import Logo from '../assets/Images/logo.png'
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
-import { GrOrganization } from "react-icons/gr";
+
 const Footer = () => {
   return (
-    <footer className="relative w-full flex justify-center items-center flex-col bg-[#f1f8ff] text-black py-10 px-6 md:px-12">
-       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.09)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.09)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,black,transparent)]" />
-      <div className='flex flex-col justify-center items-center my-3 gap-2'>
-      <img src={Logo} alt="logo" className='w-14 object-cover object-center' />
-      <h1 className='flex items-center gap-2 justify-center'><GrOrganization /> Urji Orphanage Organization</h1>
-      </div>
-      <div className='w-full h-[1px] bg-gray-400 my-2'></div>
-      <div className="max-w-6xl flex flex-col mx-auto justify-center items-center gap-4 ">
-        {/* Contact Info */}
-           {/* Quick Links */}
-           <div  className='flex justify-center items-center flex-col'>
-          <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
-          <ul className="flex items-center gap-2 ">
-            <li><a href="/" className="hover:text-teal-400 transition">Home</a></li>
-            <li><a href="/about" className="hover:text-teal-400 transition">About Us</a></li>
-            <li><a href="/services" className="hover:text-teal-400 transition">Services</a></li>
-            <li><a href="/contact" className="hover:text-teal-400 transition">Contact</a></li>
-          </ul>
+    <footer className="relative w-full bg-secondary/5 text-foreground py-10 px-6 md:px-12">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,black,transparent)]" />
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="flex flex-col justify-center items-center my-3 gap-2">
+          <img src={Logo} alt="logo" width={56} height={56} className="object-cover object-center" />
+          <h1 className="flex items-center gap-2 justify-center text-lg font-semibold">
+            <Building className="w-5 h-5" /> Urji Orphanage Organization
+          </h1>
         </div>
+        
+        <div className="w-full h-[1px] bg-border my-6"></div>
 
-        <div className='w-full p-4 flex justify-center items-center flex-col'>
-          <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
-          <ul className="flex items-center flex-col md:flex-row justify-center gap-4 w-full">
-            <li className="flex items-center space-x-3 cursor-pointer">
-              <FaPhoneAlt className="text-teal-400" />
-              <span>+123 456 7890</span>
-            </li>
-            <li className="flex items-center space-x-3 cursor-pointer">
-              <FaEnvelope className="text-teal-400" />
-              <span>urjiorphanageorganization@gamil.com</span>
-            </li>
-            <li className="flex items-center space-x-3  cursor-pointer">
-              <FaMapMarkerAlt className="text-teal-400" />
-              <span>Robe Bale, Ethiopia</span>
-            </li>
-          </ul>
-        </div>
-        </div>
-      {/* Social Media Links */}
-      <div className="mt-8 text-center">
-        <h2 className="text-xl font-semibold mb-4">Follow Us</h2>
-        <div className="flex justify-center space-x-4">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition">
-            <FaFacebookF className="text-2xl" />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition">
-            <FaTwitter className="text-2xl" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition">
-            <FaLinkedinIn className="text-2xl" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition">
-            <FaInstagram className="text-2xl" />
-          </a>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Quick Links */}
+          <div className="flex flex-col items-center md:items-start">
+            <h2 className="text-xl font-semibold mb-4 text-secondary">Quick Links</h2>
+            <ul className="flex flex-col items-center md:items-start gap-2">
+              <li><Link to="/" className="hover:text-primary transition">Home</Link></li>
+              <li><Link to="/about" className="hover:text-primary transition">About Us</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition">Services</Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="flex flex-col items-center md:items-start">
+            <h2 className="text-xl font-semibold mb-4 text-secondary">Contact Us</h2>
+            <ul className="space-y-2">
+              <li><Button variant="link" asChild className="hover:text-primary p-0 h-auto font-normal">
+                <a href="tel:+251932125282" className="flex items-center">
+                  <Phone className="w-4 h-4 mr-2" />
+                  <span>+251932125282</span>
+                </a>
+              </Button></li>
+              <li><Button variant="link" asChild className="hover:text-primary p-0 h-auto font-normal">
+                <a href="tel:+251928137925" className="flex items-center">
+                  <Phone className="w-4 h-4 mr-2" />
+                  <span>+251928137925</span>
+                </a>
+              </Button></li>
+              <li><Button variant="link" asChild className="hover:text-primary p-0 h-auto font-normal">
+                <a href="mailto:urjiorphanageorganization@gmail.com" className="flex items-center">
+                  <Mail className="w-4 h-4 mr-2" />
+                  <span>urjiorphanageorganization@gmail.com</span>
+                </a>
+              </Button></li>
+              <li><Button variant="link" asChild className="hover:text-primary p-0 h-auto font-normal">
+                <a href="https://www.google.com/maps/search/?api=1&query=Robe+Bale+Ethiopia" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                  <MapPin className="w-4 h-4 mr-2" />
+                  <span>Robe Bale, Ethiopia</span>
+                </a>
+              </Button></li>
+            </ul>
+          </div>
+
+          {/* Social Media Links */}
+          <div className="flex flex-col items-center md:items-start">
+            <h2 className="text-xl font-semibold mb-4 text-secondary">Follow Us</h2>
+            <div className="flex space-x-4">
+              <Button variant="ghost" size="icon" asChild className="hover:text-primary hover:bg-primary/10">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="w-5 h-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild className="hover:text-primary hover:bg-primary/10">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                  <Twitter className="w-5 h-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild className="hover:text-primary hover:bg-primary/10">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild className="hover:text-primary hover:bg-primary/10">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="w-5 h-5" />
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Copyright Section */}
-      <div className="mt-8 text-center border-t border-gray-700 pt-4">
-        <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} Urji Orphanage Organization. All rights reserved.</p>
+      <div className="mt-8 text-center border-t border-border pt-4">
+        <p className="text-sm text-muted-foreground">
+          &copy; {new Date().getFullYear()} Urji Orphanage Organization. All rights reserved.
+        </p>
       </div>
     </footer>
   );
