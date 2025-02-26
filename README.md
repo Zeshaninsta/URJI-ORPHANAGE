@@ -1,8 +1,4 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# URJI ORPHANAGE ORGANIZATION
+## Being an Orphan Father is Being a Father of Opportunity
+### Helping Orphans, Changing Lives
+Our mission is to support orphaned children and families by providing essential needs such as clothing, food, education, and mental support. With the help of sponsors and partner organizations, we strive to make a lasting impact on their lives
